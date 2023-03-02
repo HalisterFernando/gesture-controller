@@ -1,7 +1,3 @@
-import { prepareRunChecker } from '../../../lib/shared/util.js'
-
-const { shouldRun } = prepareRunChecker({timerDelay: 500}) 
-
 export default class Controller {
     #view
     #camera 
@@ -34,6 +30,7 @@ export default class Controller {
             console.log('recebi')
             const blinked = data.blinked
             this.#blinkCounter += blinked
+            this.#view.togglePlayVideo()
             console.log('blinked', blinked)
         }
 
